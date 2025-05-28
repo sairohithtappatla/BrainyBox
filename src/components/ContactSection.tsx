@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Loader2, ExternalLink } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const ContactSection = () => {
     subject: '',
     message: ''
   });
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(true); // Always show form now
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -18,7 +18,7 @@ const ContactSection = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    setSubmitError(''); // Clear error when user types
+    setSubmitError('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,7 +33,7 @@ const ContactSection = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '7da42d2f-9a74-45d8-b22d-75c231779d00', // Replace with your Web3Forms access key
+          access_key: '03b6581a-5dad-4c2e-a46a-72ca57901a38',
           name: formData.name,
           email: formData.email,
           year: formData.year,
@@ -53,9 +53,9 @@ ${formData.message}
 Submitted at: ${new Date().toLocaleString()}
           `,
           from_name: 'BrainyBox Contact Form',
-          to_email: 'sairohithtappatla45@gmail.com', // Your email address
+          to_email: 'brainybox459@gmail.com',
           replyTo: formData.email,
-          redirect: false // Don't redirect after submission
+          redirect: false
         })
       });
 
@@ -65,7 +65,6 @@ Submitted at: ${new Date().toLocaleString()}
         setIsSubmitted(true);
         setFormData({ name: '', email: '', year: '', subject: '', message: '' });
         
-        // Hide success message after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
@@ -80,27 +79,80 @@ Submitted at: ${new Date().toLocaleString()}
     }
   };
 
+  // Enhanced email handler for better Gmail integration
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Pre-filled email data
+    const subject = encodeURIComponent('Inquiry from BrainyBox Website');
+    const body = encodeURIComponent(`Hello BrainyBox Team,
+
+I'm interested in learning more about your services.
+
+Best regards`);
+    
+    // Try to open Gmail compose directly
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=brainybox459@gmail.com&su=${subject}&body=${body}`;
+    
+    // Fallback to mailto
+    const mailtoUrl = `mailto:brainybox459@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Try Gmail first, then fallback to default email client
+    const popup = window.open(gmailUrl, '_blank', 'width=800,height=600');
+    
+    // If popup is blocked or Gmail doesn't open, use mailto
+    setTimeout(() => {
+      if (!popup || popup.closed) {
+        window.location.href = mailtoUrl;
+      }
+    }, 1000);
+  };
+
+  // WhatsApp handler
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '918247439347'; // Your WhatsApp number (without + sign)
+    const message = encodeURIComponent(`Hello BrainyBox Team! 👋
+
+I'm interested in your services and would like to discuss:
+
+• Project requirements
+• Pricing information
+• Available solutions
+
+Looking forward to hearing from you!
+
+Best regards`);
+    
+    // WhatsApp Web URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email Us',
       description: 'Get in touch via email',
-      contact: 'hello@brainybox.dev',
-      href: 'mailto:hello@brainybox.dev'
+      contact: 'brainybox459@gmail.com',
+      href: 'mailto:brainybox459@gmail.com',
+      onClick: handleEmailClick,
+      special: true
     },
     {
       icon: Phone,
       title: 'Call Us',
       description: '24/7 support available',
-      contact: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      contact: '+91 8247439347',
+      href: 'tel:+918247439347'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      description: 'Our headquarters',
-      contact: 'San Francisco, CA',
-      href: 'https://maps.google.com'
+      description: 'Our Workspace Location',
+      contact: 'SRM University, Chennai',
+      href: 'https://maps.google.com/search/SRM+University+Chennai'
     }
   ];
 
@@ -146,7 +198,7 @@ Submitted at: ${new Date().toLocaleString()}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-          {/* Contact Info - Compact Cards */}
+          {/* Contact Info - Enhanced Cards */}
           <div className="lg:col-span-1">
             <h3 className="text-2xl font-bold mb-8 text-foreground">Contact Information</h3>
 
@@ -154,22 +206,38 @@ Submitted at: ${new Date().toLocaleString()}
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 return (
-                  <a
+                  <div
                     key={index}
-                    href={info.href}
-                    className="group flex items-start gap-3 p-4 bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl border border-border/40 hover:border-coral/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                    onClick={info.onClick || (() => window.open(info.href, '_blank'))}
+                    className={`group flex items-start gap-3 p-4 bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl border transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${
+                      info.special 
+                        ? 'border-coral/50 hover:border-coral shadow-lg hover:shadow-coral/20' 
+                        : 'border-border/40 hover:border-coral/50'
+                    }`}
                   >
-                    <div className="bg-gradient-to-br from-coral/10 to-raspberry/10 w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className={`bg-gradient-to-br w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
+                      info.special
+                        ? 'from-coral/20 to-raspberry/20 shadow-md'
+                        : 'from-coral/10 to-raspberry/10'
+                    }`}>
                       <IconComponent className="w-5 h-5 text-coral" />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-foreground group-hover:text-coral transition-colors duration-300 text-sm">
-                        {info.title}
-                      </h4>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <h4 className="font-bold text-foreground group-hover:text-coral transition-colors duration-300 text-sm">
+                          {info.title}
+                        </h4>
+                        {info.special && (
+                          <ExternalLink className="w-3 h-3 text-coral opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        )}
+                      </div>
                       <p className="text-xs text-muted-foreground mb-1">{info.description}</p>
                       <p className="text-coral font-medium text-sm">{info.contact}</p>
+                      {info.special && (
+                        <p className="text-xs text-coral/70 mt-1">Click to compose email</p>
+                      )}
                     </div>
-                  </a>
+                  </div>
                 );
               })}
             </div>
@@ -197,20 +265,19 @@ Submitted at: ${new Date().toLocaleString()}
               </ul>
             </div>
 
-            {/* Contact Button */}
+            {/* WhatsApp Button */}
             <div>
               <Button
-                onClick={() => setShowForm(!showForm)}
-                className="w-full bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-6 py-3 font-bold transition-all duration-300 hover:scale-105 rounded-xl"
+                onClick={handleWhatsAppClick}
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 font-bold transition-all duration-300 hover:scale-105 rounded-xl shadow-lg hover:shadow-green-500/25"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                {showForm ? 'Hide Contact Form' : 'Send us a Message'}
+                <span> 💬  Chat on WhatsApp</span>
               </Button>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className={`lg:col-span-2 transition-all duration-500 ${showForm ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}`}>
+          {/* Contact Form - Always Visible */}
+          <div className="lg:col-span-2">
             <div className="bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-border/40 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-raspberry/5 opacity-50" />
 
