@@ -24,18 +24,14 @@ export default function Header() {
 
   const handleNavigation = (href: string, label: string) => {
     if (label === 'Home') {
-      // Always handle Home button click properly
       if (location.pathname !== '/') {
-        // If not on home page, navigate to home
         navigate('/');
       } else {
-        // If already on home page, scroll to top
         window.scrollTo({ 
           top: 0, 
           behavior: 'smooth' 
         });
         
-        // Also ensure we're at the home section
         setTimeout(() => {
           const homeElement = document.querySelector('#home');
           if (homeElement) {
@@ -46,18 +42,15 @@ export default function Header() {
     } else if (label === 'Projects') {
       navigate('/projects');
     } else {
-      // For anchor links (About, Solutions, Contact)
       if (location.pathname !== '/') {
-        // If not on home page, navigate to home first, then scroll
         navigate('/');
         setTimeout(() => {
-          const element = document.querySelector(href); // FIXED: removed '#home'+
+          const element = document.querySelector(href);
           if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 300); // Increased timeout to ensure page loads
+        }, 300);
       } else {
-        // If on home page, just scroll to the section
         const element = document.querySelector(href);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
@@ -68,7 +61,7 @@ export default function Header() {
 
   const navItems = [
     { href: '#home', label: 'Home' },
-    { href: '/projects', label: 'Projects' }, // Changed to route for clarity
+    { href: '/projects', label: 'Projects' },
     { href: '#solutions', label: 'Solutions' },
     { href: '#about', label: 'About' },
     { href: '#contact', label: 'Contact' },
@@ -83,7 +76,7 @@ export default function Header() {
         } backdrop-blur-xl`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 sm:h-24">
-            {/* Logo - Enhanced with Dark Theme - FIXED: Added proper Home navigation */}
+            {/* Logo */}
             <button
               onClick={() => handleNavigation('#home', 'Home')}
               className="text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-coral via-raspberry to-coral bg-clip-text text-transparent tracking-tight hover:scale-105 transition-transform duration-300 cursor-pointer"
@@ -92,7 +85,7 @@ export default function Header() {
               BrainyBox
             </button>
 
-            {/* Desktop Navigation - Enhanced with Better Hover */}
+            {/* Desktop Navigation */}
             <ul className="hidden lg:flex list-none gap-10 xl:gap-12 items-center">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -110,9 +103,9 @@ export default function Header() {
               ))}
             </ul>
 
-            {/* Right Controls - Enhanced */}
+            {/* Right Controls */}
             <div className="flex items-center gap-4 sm:gap-5">
-              {/* Theme Toggle - Enhanced */}
+              {/* Theme Toggle */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -123,7 +116,7 @@ export default function Header() {
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-foreground" />
               </Button>
 
-              {/* Get Started Button - Enhanced */}
+              {/* Get Started Button */}
               <Button
                 onClick={() => handleNavigation('#contact', 'Contact')}
                 className="hidden sm:inline-flex bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-6 py-3 text-base font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_50px_rgba(226,109,90,0.4)] dark:hover:shadow-[0_15px_50px_rgba(226,109,90,0.6)] rounded-lg"
@@ -131,7 +124,7 @@ export default function Header() {
                 Get Started
               </Button>
 
-              {/* Mobile Menu Toggle - Enhanced */}
+              {/* Mobile Menu Toggle */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -143,7 +136,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Enhanced Mobile Menu */}
+          {/* Mobile Menu */}
           <div className={`lg:hidden transition-all duration-300 ${isMobileMenuOpen
             ? 'max-h-96 opacity-100'
             : 'max-h-0 opacity-0 overflow-hidden'
@@ -178,29 +171,27 @@ export default function Header() {
       {/* Hero Section - Only show on home page */}
       {location.pathname === '/' && (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
-          {/* Enhanced Background Layer with vibrant dark theme */}
+          {/* Background Layer */}
           <div className="absolute inset-0">
             <Background3D />
-            {/* Enhanced animated gradient overlay for dark theme */}
             <div className="absolute inset-0 bg-gradient-to-br from-coral/8 via-transparent to-raspberry/8 dark:from-coral/20 dark:via-transparent dark:to-raspberry/20" />
-            {/* More vibrant floating orbs for dark theme */}
             <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-coral/10 dark:bg-coral/25 rounded-full blur-3xl animate-float opacity-60 dark:opacity-90" />
             <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-raspberry/10 dark:bg-raspberry/25 rounded-full blur-3xl animate-float opacity-60 dark:opacity-90" style={{ animationDelay: '2s' }} />
             <div className="absolute top-1/2 left-1/6 w-40 h-40 bg-lavender/20 dark:bg-lavender/40 rounded-full blur-2xl animate-bounce-gentle opacity-40 dark:opacity-80" style={{ animationDelay: '1s' }} />
           </div>
 
-          {/* Enhanced gradient overlay for better text contrast in dark theme */}
+          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/15 to-background/35 dark:from-black/60 dark:via-black/10 dark:to-black/30" />
 
-          {/* Hero Content - No Bottom Padding */}
+          {/* Hero Content */}
           <div className="relative z-20 max-w-6xl mx-auto px-6 sm:px-8 text-center pt-28 sm:pt-32">
-            {/* Enhanced Badge with Dark Theme Support */}
+            {/* Badge */}
             <div className="inline-flex items-center gap-3 bg-coral/25 dark:bg-coral/35 border-2 border-coral/50 dark:border-coral/60 px-6 py-3 rounded-full mb-10 sm:mb-14 text-base font-bold text-coral dark:text-coral shadow-xl dark:shadow-2xl backdrop-blur-md animate-fade-in-up hover:scale-105 transition-transform duration-300">
               <span className="text-lg animate-bounce-gentle">🚀</span>
               <span className="text-coral dark:text-coral font-bold">Enterprise-Grade CSE Solutions</span>
             </div>
 
-            {/* Enhanced Hero Title with Better Dark Theme */}
+            {/* Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-10 sm:mb-14 leading-[1.1] tracking-tight animate-fade-in-up animate-delay-100 text-foreground dark:text-foreground">
               Premium{' '}
               <span className="bg-gradient-to-r from-coral via-raspberry to-coral bg-clip-text text-transparent animate-pulse">
@@ -210,7 +201,7 @@ export default function Header() {
               <span className="text-foreground dark:text-foreground">Solutions for Developers</span>
             </h1>
 
-            {/* Enhanced Subtitle with Dark Theme */}
+            {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground/90 dark:text-muted-foreground mb-14 sm:mb-18 max-w-5xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200 font-medium">
               Transform your development workflow with{' '}
               <span className="text-coral dark:text-coral font-semibold hover:scale-105 inline-block transition-transform duration-300">battle-tested projects</span>,{' '}
@@ -219,25 +210,27 @@ export default function Header() {
               that scales with your vision.
             </p>
 
-            {/* Enhanced CTA Buttons with Better Spacing */}
+            {/* CTA Buttons - Single, Clear Button */}
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center animate-fade-in-up animate-delay-300 mb-16 sm:mb-20">
               <Button 
                 onClick={() => navigate('/projects')}
                 className="w-full sm:w-auto bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-12 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-2 hover:scale-110 hover:shadow-[0_25px_80px_rgba(226,109,90,0.4)] dark:hover:shadow-[0_25px_80px_rgba(226,109,90,0.6)] rounded-xl shadow-lg group"
               >
-                <span className="mr-3 text-xl group-hover:animate-bounce">🔥</span>
+                <span className="mr-3 text-xl group-hover:animate-bounce">🚀</span>
                 Explore Projects
               </Button>
+              
               <Button
-                variant="outline"
+                onClick={() => handleNavigation('#contact', 'Contact')}
+                variant="outline" 
                 className="w-full sm:w-auto bg-background/80 dark:bg-background/90 backdrop-blur-md border-2 border-border/50 dark:border-border/60 hover:bg-background/90 dark:hover:bg-background/95 hover:border-border/70 dark:hover:border-border/80 px-12 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-2 hover:scale-110 rounded-xl shadow-lg group"
               >
-                <span className="mr-3 text-xl group-hover:animate-pulse">▶️</span>
-                Watch Demo
+                <span className="mr-3 text-xl group-hover:animate-pulse">💬</span>
+                Get In Touch
               </Button>
             </div>
 
-            {/* Enhanced Features Grid with Creative Animations - Last Element */}
+            {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto animate-fade-in-up animate-delay-400">
               <div className="group bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-8 border border-border/40 dark:border-border/50 hover:border-coral/50 dark:hover:border-coral/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:rotate-1 cursor-pointer relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-transparent dark:from-coral/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
