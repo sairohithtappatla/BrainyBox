@@ -38,7 +38,7 @@ const Footer = () => {
     { icon: Github, href: 'https://github.com', label: 'GitHub' },
     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:hello@brainybox.dev', label: 'Email' },
+    { icon: Mail, href: 'mailto:brainybox459@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -132,7 +132,7 @@ const Footer = () => {
         <div className="border-t border-border/30 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <p className="text-muted-foreground text-sm">
-              © 2024 BrainyBox. All rights reserved. Built with ❤️ for developers.
+              © 2025 BrainyBox. All rights reserved. Built with ❤️ for students.
             </p>
           </div>
 

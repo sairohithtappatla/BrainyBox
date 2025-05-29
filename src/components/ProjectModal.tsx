@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Project } from '../pages/Index';
 
@@ -8,15 +7,8 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
-const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, []);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
@@ -27,8 +19,11 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm">
-      <div 
+    <div
+      className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
         className="bg-white rounded-t-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
@@ -39,7 +34,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               <span className="text-4xl">{project.icon}</span>
               {project.title}
             </h2>
-            <p className="text-charcoal/60 mt-1">by {project.author}</p>
           </div>
           <button
             onClick={onClose}
@@ -59,7 +53,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 alt={`${project.title} screenshot ${currentImageIndex + 1}`}
                 className="w-full h-full object-cover transition-opacity duration-500"
               />
-              
+
               {project.images.length > 1 && (
                 <>
                   <button
@@ -85,11 +79,10 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                      index === currentImageIndex
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentImageIndex
                         ? 'bg-coral scale-125'
                         : 'bg-white/70 hover:bg-white'
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
@@ -117,14 +110,14 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
-          {/* Price and CTA */}
+          {/* CTA Section */}
           <div className="bg-gradient-to-r from-cream to-coral/10 rounded-2xl p-6 text-center">
-            <div className="font-poppins text-4xl font-bold text-raspberry mb-4">{project.price}</div>
+            <h3 className="font-poppins text-xl font-semibold text-charcoal mb-4">Interested in this project?</h3>
             <button className="bg-gradient-to-r from-coral to-raspberry text-white px-12 py-4 rounded-2xl font-poppins font-semibold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-coral/90 hover:to-raspberry/90">
-              Purchase Project
+              Get Project Details
             </button>
             <p className="text-charcoal/60 mt-4 text-sm">
-              Includes full source code, documentation, and 30-day support
+              Contact us to learn more about this project and implementation details
             </p>
           </div>
         </div>

@@ -61,38 +61,7 @@ const AboutSection = () => {
     }
   ];
 
-  const features = [
-    {
-      title: 'Production-Ready Code',
-      description: 'Every project is thoroughly tested and optimized for production deployment.',
-      icon: '🚀',
-      gradient: 'from-coral to-raspberry'
-    },
-    {
-      title: 'Comprehensive Documentation',
-      description: 'Detailed guides, API references, and step-by-step implementation instructions.',
-      icon: '📚',
-      gradient: 'from-raspberry to-coral'
-    },
-    {
-      title: 'Modern Technology Stack',
-      description: 'Built with the latest frameworks, libraries, and industry best practices.',
-      icon: '⚡',
-      gradient: 'from-coral to-raspberry'
-    },
-    {
-      title: 'Scalable Architecture',
-      description: 'Built with modern frameworks and best practices for long-term maintainability.',
-      icon: '🏗️',
-      gradient: 'from-coral to-raspberry'
-    },
-    {
-      title: 'Continuous Updates',
-      description: 'Regular updates and security patches to keep your projects current and secure.',
-      icon: '🔄',
-      gradient: 'from-raspberry to-coral'
-    },
-  ];
+
 
   return (
     <section className="py-20 sm:py-24 px-6 bg-background relative overflow-hidden" id="about">
@@ -150,60 +119,6 @@ const AboutSection = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20 sm:mb-24">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-border/40 hover:border-coral/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.08}s` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-transparent dark:from-coral/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-              
-              <div className="relative z-10">
-                <div className="text-4xl mb-4 group-hover:scale-125 group-hover:animate-bounce transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-coral transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">
-                  {feature.description}
-                </p>
-              </div>
-              <div className="absolute -top-2 -right-2 w-4 h-4 bg-coral rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-300 animate-ping" />
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-coral/10 to-raspberry/10 rounded-3xl p-12 sm:p-16 border border-coral/20">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">
-            Ready to Build Something Amazing?
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of developers who trust BrainyBox for their next project.
-            Start building with our premium solutions today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              onClick={handleContactNavigation}
-              className="bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-10 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_20px_60px_rgba(226,109,90,0.4)] rounded-xl"
-            >
-              <span className="mr-2">🚀</span>
-              Start Building Now
-            </Button>
-            <Button
-              onClick={handleWhatsAppRedirection}
-              variant="outline"
-              className="bg-background/80 backdrop-blur-md border-2 border-border/50 hover:bg-background/90 hover:border-border/60 px-10 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 rounded-xl"
-            >
-              <span className="mr-2">💬</span>
-              Talk to Sales
-            </Button>
-          </div>
         </div>
       </div>
     </section>

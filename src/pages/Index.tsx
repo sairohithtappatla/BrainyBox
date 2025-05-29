@@ -8,7 +8,7 @@ import SolutionsSection from '../components/SolutionsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import ProjectModal from '../components/ProjectModal';
-import FloatingAIBot from '../components/FloatingAIBot';
+import EnhancedAIBot from '../components/EnhancedAIBot';
 import { useScrollContext } from '@/context/ScrollContext';
 
 export interface Project {
@@ -18,70 +18,56 @@ export interface Project {
   icon: string;
   tags: string[];
   images: string[];
-  author: string;
-  price: string;
 }
 
 const sampleProjects: Project[] = [
   {
-    id: 1,
-    title: "Smart Home Dashboard",
-    description: "A beautiful React dashboard for controlling IoT devices with real-time data visualization and responsive design.",
-    icon: "🏠",
-    tags: ["React", "IoT", "Dashboard"],
-    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800", "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800"],
-    author: "Alex Chen",
-    price: "$49"
+    id: 128,
+    title: "Chatbot Development",
+    description: "AI chatbot using natural language processing with machine learning for intelligent conversations and customer support.",
+    icon: "💬",
+    tags: ["AI/ML", "NLP", "Chatbot"],
+    images: ["https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800", "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800"]
   },
   {
-    id: 2,
-    title: "AI Study Companion",
-    description: "An intelligent study assistant that uses machine learning to adapt to your learning style and schedule.",
-    icon: "🤖",
-    tags: ["AI", "Python", "Education"],
-    images: ["https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800", "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800"],
-    author: "Maya Patel",
-    price: "$79"
+    id: 29,
+    title: "Game Development Engine",
+    description: "Object-oriented game engine with physics simulation, graphics rendering, collision detection, and modular architecture.",
+    icon: "🎮",
+    tags: ["OODP", "Game Engine", "Graphics"],
+    images: ["https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800", "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800"]
   },
   {
-    id: 3,
-    title: "Eco-Tracker Mobile App",
-    description: "Track your carbon footprint with this beautiful mobile app featuring gamification and social challenges.",
-    icon: "🌱",
-    tags: ["React Native", "Sustainability", "Mobile"],
-    images: ["https://images.unsplash.com/photo-1485833077593-4278bba3f11f?w=800", "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800"],
-    author: "Jordan Kim",
-    price: "$35"
+    id: 201,
+    title: "Real-time Face Detection",
+    description: "OpenCV-based face detection system with real-time video processing using Haar cascades and deep learning models.",
+    icon: "👤",
+    tags: ["Computer Vision", "OpenCV", "Face Detection"],
+    images: ["https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800", "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800"]
   },
   {
-    id: 4,
-    title: "Virtual Study Rooms",
-    description: "Collaborative virtual spaces for students to study together with video chat, whiteboards, and resource sharing.",
-    icon: "📚",
-    tags: ["WebRTC", "Collaboration", "Education"],
-    images: ["https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800", "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800"],
-    author: "Sam Rodriguez",
-    price: "$65"
+    id: 255,
+    title: "Stock Price Predictor",
+    description: "Financial prediction model using Python with real-time data fetching and LSTM neural networks.",
+    icon: "📈",
+    tags: ["Python", "Finance", "Prediction", "Neural Networks"],
+    images: ["https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800", "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800"]
   },
   {
-    id: 5,
-    title: "Blockchain Voting System",
-    description: "Secure and transparent voting platform using blockchain technology with modern UI and real-time results.",
-    icon: "🗳️",
-    tags: ["Blockchain", "Security", "Web3"],
-    images: ["https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800", "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800"],
-    author: "Taylor Swift",
-    price: "$120"
+    id: 151,
+    title: "Secure File Encryption Tool",
+    description: "Advanced cryptography project implementing AES, RSA encryption algorithms with digital signatures and key management.",
+    icon: "🔐",
+    tags: ["Cryptography", "Security", "Encryption"],
+    images: ["https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800", "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"]
   },
   {
-    id: 6,
-    title: "Social Recipe Sharing",
-    description: "Connect food lovers worldwide with this recipe sharing platform featuring video tutorials and social features.",
-    icon: "👨‍🍳",
-    tags: ["Social", "Food", "Community"],
-    images: ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800", "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800"],
-    author: "Chef Maria",
-    price: "$45"
+    id: 226,
+    title: "E-Commerce Platform",
+    description: "Complete online shopping platform with React frontend, Node.js backend, MongoDB database, and payment integration.",
+    icon: "🛒",
+    tags: ["FSD", "React", "Node.js", "MongoDB"],
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800", "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"]
   }
 ];
 
@@ -111,17 +97,17 @@ const Index = () => {
   }, [targetSection, setTargetSection]);
 
   return (
-    <ThemeProvider defaultTheme="light" storageKey="brainybox-theme">
+    <ThemeProvider>
       <div className="min-h-screen bg-background">
         {/* Header with Hero Section */}
         <Header />
-        
+
         {/* 1. First: Comprehensive Development Solutions */}
         <SolutionsSection />
-        
+
         {/* 2. Second: Empowering Developers with Premium Solutions */}
         <AboutSection />
-        
+
         {/* 3. Third: Featured Projects */}
         <ProjectsGrid
           projects={sampleProjects}
@@ -129,13 +115,13 @@ const Index = () => {
           showViewMore={true}
           onViewMore={handleViewMore}
         />
-        
+
         {/* 4. Contact Section */}
         <ContactSection />
-        
+
         {/* Footer */}
         <Footer />
-        
+
         {/* Project Modal */}
         {selectedProject && (
           <ProjectModal
@@ -143,9 +129,9 @@ const Index = () => {
             onClose={() => setSelectedProject(null)}
           />
         )}
-        
-        {/* Floating AI Bot */}
-        <FloatingAIBot />
+
+        {/* Enhanced AI Bot */}
+        <EnhancedAIBot />
       </div>
     </ThemeProvider>
   );

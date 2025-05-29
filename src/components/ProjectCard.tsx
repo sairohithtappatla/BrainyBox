@@ -7,16 +7,16 @@ interface ProjectCardProps {
   onClick: () => void;
 }
 
-const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
       onClick={onClick}
-      className="group cursor-pointer bg-background/80 dark:bg-gray-900/90 backdrop-blur-md rounded-3xl p-6 border border-border/40 dark:border-gray-700/50 hover:border-coral/50 dark:hover:border-coral/60 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 shadow-lg dark:shadow-2xl hover:shadow-xl dark:hover:shadow-coral/20 relative overflow-hidden dark-theme-glow"
+      className="group bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-border/40 dark:border-border/50 hover:border-coral/50 dark:hover:border-coral/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer relative overflow-hidden shadow-lg dark:shadow-xl hover:shadow-coral/20 dark:hover:shadow-coral/30"
     >
       {/* Enhanced project icon */}
-      <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg">
+      <div className="text-4xl sm:text-5xl mb-4 sm:mb-6 group-hover:scale-110 group-hover:animate-bounce transition-transform duration-300 filter drop-shadow-lg">
         {project.icon}
       </div>
 
@@ -51,19 +51,16 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         ))}
       </div>
 
-      {/* Enhanced author and price */}
-      <div className="flex justify-between items-center">
-        <div className="text-muted-foreground dark:text-gray-400 text-sm">
-          by <span className="font-semibold text-foreground dark:text-white">{project.author}</span>
-        </div>
-        <div className="font-bold text-xl text-raspberry dark:text-raspberry shadow-sm">
-          {project.price}
-        </div>
+      {/* View Project Button */}
+      <div className="flex justify-center">
+        <button className="bg-gradient-to-r from-coral to-raspberry text-white px-6 py-2 rounded-xl font-semibold text-sm hover:from-coral/90 hover:to-raspberry/90 transition-all duration-300 hover:scale-105 shadow-lg group-hover:shadow-coral/30">
+          View Project
+        </button>
       </div>
 
       {/* Enhanced hover glow effect */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-coral/5 to-raspberry/5 dark:from-coral/15 dark:to-raspberry/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-      
+
       {/* Dark theme specific glow */}
       <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none dark:bg-gradient-to-r dark:from-coral/10 dark:to-raspberry/10 dark:blur-xl"></div>
     </div>
