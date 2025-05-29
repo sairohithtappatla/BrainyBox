@@ -33,7 +33,7 @@ const ContactSection = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '03b6581a-5dad-4c2e-a46a-72ca57901a38',
+          access_key: 'YOUR WEB3 FORM KEY',
           name: formData.name,
           email: formData.email,
           year: formData.year,
