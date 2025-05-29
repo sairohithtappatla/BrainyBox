@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from './theme-provider';
 import Background3D from './ui/Background3D';
+import BrainBoxIcon from './ui/BrainBoxIcon';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,13 +77,18 @@ export default function Header() {
         } backdrop-blur-xl`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 sm:h-24">
-            {/* Logo */}
+            {/* Logo with Brain Box Icon */}
             <button
               onClick={() => handleNavigation('#home', 'Home')}
-              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-coral via-raspberry to-coral bg-clip-text text-transparent tracking-tight hover:scale-105 transition-transform duration-300 cursor-pointer"
-              style={{ lineHeight: '3.5rem' }}
+              className="flex items-center gap-3 group cursor-pointer"
             >
-              BrainyBox
+              <BrainBoxIcon className="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform duration-300" />
+              <span 
+                className="text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-coral via-raspberry to-coral bg-clip-text text-transparent tracking-tight group-hover:scale-105 transition-transform duration-300"
+                style={{ lineHeight: '3.5rem' }}
+              >
+                BrainyBox
+              </span>
             </button>
 
             {/* Desktop Navigation */}
