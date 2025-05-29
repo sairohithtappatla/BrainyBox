@@ -1,19 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { 
-  Code2, 
-  Settings2, 
-  Coffee, 
-  Binary, 
-  Database, 
-  Bot, 
-  Shield, 
-  Image, 
-  Eye, 
-  Globe, 
-  FileCode2, 
-  Laptop 
+import {
+  Code2,
+  Settings2,
+  Coffee,
+  Binary,
+  Database,
+  Bot,
+  Shield,
+  Image,
+  Eye,
+  Globe,
+  FileCode2,
+  Laptop
 } from 'lucide-react';
 
 const SolutionsSection = () => {
@@ -191,8 +191,8 @@ const SolutionsSection = () => {
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Master every aspect of Computer Science Engineering with our
-            <span className="text-raspberry font-semibold"> curriculum-aligned projects</span> covering
-            all major programming subjects and practical implementations.
+            <span className="text-coral font-semibold"> affordable, high-quality projects</span> covering
+            all major programming subjects at student-friendly prices.
           </p>
         </div>
 
@@ -259,26 +259,24 @@ const SolutionsSection = () => {
         {/* Bottom CTA */}
         <div className="text-center bg-gradient-to-r from-raspberry/10 to-coral/10 rounded-3xl p-12 sm:p-16 border border-raspberry/20">
           <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">
-            Need Help with Your Academic Projects?
+            Quality Projects at Student Prices
           </h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Our expert team can help you understand concepts, implement solutions, and excel in your CSE curriculum.
+            Don't break the bank for quality projects. Get premium academic solutions starting from just ₹999!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={handleContactNavigation}
-              className="bg-gradient-to-r from-raspberry to-coral hover:from-raspberry/90 hover:to-coral/90 text-white px-10 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_20px_60px_rgba(195,7,63,0.4)] rounded-xl"
+              className="bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              <span className="mr-2">🎯</span>
-              Get Academic Help
+              💰 Get Student Pricing
             </Button>
             <Button
-              onClick={handleWhatsAppRedirection}
+              onClick={() => navigate('/projects')}
               variant="outline"
-              className="bg-background/80 backdrop-blur-md border-2 border-border/50 hover:bg-background/90 hover:border-border/70 px-10 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 rounded-xl"
+              className="px-8 py-3 text-lg font-semibold rounded-xl border-2 hover:bg-coral/10 transition-all duration-300"
             >
-              <span className="mr-2">💬</span>
-              Chat on WhatsApp
+              View Affordable Projects
             </Button>
           </div>
         </div>

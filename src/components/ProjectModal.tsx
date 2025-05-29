@@ -26,22 +26,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
     const message = encodeURIComponent(
       `Hello BrainyBox Team!
 
-I'm interested in getting this amazing project:
+I'm interested in getting this project at student pricing:
 
 Project Name: ${projectName}
 Technologies: ${projectTags}
 Project ID: #${project.id}
 
 Could you please provide me with:
-• Project cost & pricing details
+• Best available student price
+• Any current discounts or offers
 • What's included in the package
-• Delivery timeline
-• Academic compliance confirmation
-• Documentation and support details
+• Payment options for students
+• Instant delivery confirmation
 
-I'm excited to work with this project for my academic/learning purposes!
+I'm looking for affordable quality solutions for my academic needs!
 
-Looking forward to hearing from you soon!`
+Looking forward to your student-friendly pricing!`
     );
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -137,22 +137,22 @@ Looking forward to hearing from you soon!`
 
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-cream to-coral/10 rounded-2xl p-6 text-center">
-            <h3 className="font-poppins text-xl font-semibold text-charcoal mb-4">Ready to bring this project to life? 🚀</h3>
+            <h3 className="font-poppins text-xl font-semibold text-charcoal mb-4">Ready to ace your academics? 🎯</h3>
             <p className="text-charcoal/70 mb-6 text-sm leading-relaxed">
-              Get this complete project with source code, documentation, and full support. Perfect for academic submissions and learning!
+              Get this complete project with source code at an unbeatable student price. Quality meets affordability!
             </p>
             <button
               onClick={handleGetProject}
               className="bg-gradient-to-r from-coral to-raspberry text-white px-12 py-4 rounded-2xl font-poppins font-semibold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-coral/90 hover:to-raspberry/90 group relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
-                <span>🎯 Get This Project Now</span>
+                <span>💰 Get Project at Best Price</span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-raspberry to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             <p className="text-charcoal/60 mt-4 text-sm">
-              💡 Instant delivery • 🔧 Full source code • 🎓 Academic ready
+              💵 Student discounts available • 🚀 Instant download • 📚 Academic ready • 💬 24/7 support
             </p>
           </div>
         </div>

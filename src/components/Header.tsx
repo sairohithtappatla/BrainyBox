@@ -27,11 +27,11 @@ export default function Header() {
       if (location.pathname !== '/') {
         navigate('/');
       } else {
-        window.scrollTo({ 
-          top: 0, 
-          behavior: 'smooth' 
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
         });
-        
+
         setTimeout(() => {
           const homeElement = document.querySelector('#home');
           if (homeElement) {
@@ -185,82 +185,43 @@ export default function Header() {
 
           {/* Hero Content */}
           <div className="relative z-20 max-w-6xl mx-auto px-6 sm:px-8 text-center pt-28 sm:pt-32">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-3 bg-coral/25 dark:bg-coral/35 border-2 border-coral/50 dark:border-coral/60 px-6 py-3 rounded-full mb-10 sm:mb-14 text-base font-bold text-coral dark:text-coral shadow-xl dark:shadow-2xl backdrop-blur-md animate-fade-in-up hover:scale-105 transition-transform duration-300">
-              <span className="text-lg animate-bounce-gentle">🚀</span>
-              <span className="text-coral dark:text-coral font-bold">Enterprise-Grade CSE Solutions</span>
-            </div>
-
             {/* Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-10 sm:mb-14 leading-[1.1] tracking-tight animate-fade-in-up animate-delay-100 text-foreground dark:text-foreground">
               Premium{' '}
               <span className="bg-gradient-to-r from-coral via-raspberry to-coral bg-clip-text text-transparent animate-pulse">
-                Source Code
+                Programming Projects
               </span>
               <br />
-              <span className="text-foreground dark:text-foreground">Solutions for Developers</span>
+              <span className="text-foreground dark:text-foreground">for Students</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground/90 dark:text-muted-foreground mb-14 sm:mb-18 max-w-5xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200 font-medium">
-              Transform your development workflow with{' '}
-              <span className="text-coral dark:text-coral font-semibold hover:scale-105 inline-block transition-transform duration-300">battle-tested projects</span>,{' '}
-              comprehensive documentation, and{' '}
-              <span className="text-raspberry dark:text-raspberry font-semibold hover:scale-105 inline-block transition-transform duration-300">production-ready code</span>{' '}
-              that scales with your vision.
+              Get academic programming projects at{' '}
+              <span className="text-coral dark:text-coral font-semibold hover:scale-105 inline-block transition-transform duration-300">affordable prices</span>,{' '}
+              with instant delivery and{' '}
+              <span className="text-raspberry dark:text-raspberry font-semibold hover:scale-105 inline-block transition-transform duration-300">complete source code</span>{' '}
+              designed for student success.
             </p>
 
-            {/* CTA Buttons - Single, Clear Button */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center animate-fade-in-up animate-delay-300 mb-16 sm:mb-20">
-              <Button 
+              <Button
                 onClick={() => navigate('/projects')}
                 className="w-full sm:w-auto bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-12 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-2 hover:scale-110 hover:shadow-[0_25px_80px_rgba(226,109,90,0.4)] dark:hover:shadow-[0_25px_80px_rgba(226,109,90,0.6)] rounded-xl shadow-lg group"
               >
                 <span className="mr-3 text-xl group-hover:animate-bounce">🚀</span>
                 Explore Projects
               </Button>
-              
+
               <Button
                 onClick={() => handleNavigation('#contact', 'Contact')}
-                variant="outline" 
+                variant="outline"
                 className="w-full sm:w-auto bg-background/80 dark:bg-background/90 backdrop-blur-md border-2 border-border/50 dark:border-border/60 hover:bg-background/90 dark:hover:bg-background/95 hover:border-border/70 dark:hover:border-border/80 px-12 py-6 text-lg font-bold transition-all duration-300 hover:-translate-y-2 hover:scale-110 rounded-xl shadow-lg group"
               >
                 <span className="mr-3 text-xl group-hover:animate-pulse">💬</span>
                 Get In Touch
               </Button>
-            </div>
-
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto animate-fade-in-up animate-delay-400">
-              <div className="group bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-8 border border-border/40 dark:border-border/50 hover:border-coral/50 dark:hover:border-coral/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:rotate-1 cursor-pointer relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-transparent dark:from-coral/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div className="relative z-10">
-                  <div className="text-4xl mb-4 group-hover:scale-125 group-hover:animate-bounce transition-transform duration-300">📚</div>
-                  <h3 className="font-bold text-xl mb-3 text-foreground dark:text-foreground group-hover:text-coral dark:group-hover:text-coral transition-colors duration-300">Complete Documentation</h3>
-                  <p className="text-muted-foreground dark:text-muted-foreground text-sm leading-relaxed">Step-by-step guides and comprehensive API references for seamless integration</p>
-                </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-coral rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-300 animate-ping"></div>
-              </div>
-
-              <div className="group bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-8 border border-border/40 dark:border-border/50 hover:border-raspberry/50 dark:hover:border-raspberry/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:-rotate-1 cursor-pointer relative overflow-hidden" style={{ animationDelay: '0.1s' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-raspberry/5 to-transparent dark:from-raspberry/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div className="relative z-10">
-                  <div className="text-4xl mb-4 group-hover:scale-125 group-hover:animate-bounce transition-transform duration-300">🏗️</div>
-                  <h3 className="font-bold text-xl mb-3 text-foreground dark:text-foreground group-hover:text-raspberry dark:group-hover:text-raspberry transition-colors duration-300">Scalable Architecture</h3>
-                  <p className="text-muted-foreground dark:text-muted-foreground text-sm leading-relaxed">Enterprise-grade code structure designed for growth and maintainability</p>
-                </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-raspberry rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-300 animate-ping" style={{ animationDelay: '0.5s' }}></div>
-              </div>
-
-              <div className="group bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-8 border border-border/40 dark:border-border/50 hover:border-coral/50 dark:hover:border-coral/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:rotate-1 cursor-pointer relative overflow-hidden" style={{ animationDelay: '0.2s' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-transparent dark:from-coral/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div className="relative z-10">
-                  <div className="text-4xl mb-4 group-hover:scale-125 group-hover:animate-bounce transition-transform duration-300">🚀</div>
-                  <h3 className="font-bold text-xl mb-3 text-foreground dark:text-foreground group-hover:text-coral dark:group-hover:text-coral transition-colors duration-300">Production Ready</h3>
-                  <p className="text-muted-foreground dark:text-muted-foreground text-sm leading-relaxed">Deploy immediately with confidence using battle-tested solutions</p>
-                </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-coral rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-300 animate-ping" style={{ animationDelay: '1s' }}></div>
-              </div>
             </div>
           </div>
         </section>

@@ -1640,7 +1640,7 @@ const allProjects: Project[] = [
     description: "OpenCV-based face detection system with real-time video processing using Haar cascades and deep learning models.",
     icon: "👤",
     tags: ["Computer Vision", "OpenCV", "Face Detection"],
-    images: ["https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800", "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800"]
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800", "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"]
   },
   {
     id: 202,
