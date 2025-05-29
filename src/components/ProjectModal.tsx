@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Project } from '../pages/Index';
+import { Project } from '@/pages/Index';
 
 interface ProjectModalProps {
   project: Project;
@@ -18,74 +18,99 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
     setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
+  const handleGetProject = () => {
+    const phoneNumber = '918247439347';
+    const projectName = project.title;
+    const projectTags = project.tags.join(', ');
+
+    const message = encodeURIComponent(
+      `Hello BrainyBox Team!
+
+I'm interested in getting this amazing project:
+
+Project Name: ${projectName}
+Technologies: ${projectTags}
+Project ID: #${project.id}
+
+Could you please provide me with:
+• Project cost & pricing details
+• What's included in the package
+• Delivery timeline
+• Academic compliance confirmation
+• Documentation and support details
+
+I'm excited to work with this project for my academic/learning purposes!
+
+Looking forward to hearing from you soon!`
+    );
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
-    <div
-      className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        className="bg-white rounded-t-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl animate-slide-up"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="sticky top-0 bg-white/95 backdrop-blur-md p-6 border-b border-gray-100 flex justify-between items-center rounded-t-3xl">
-          <div>
-            <h2 className="font-poppins text-3xl font-bold text-charcoal flex items-center gap-3">
-              <span className="text-4xl">{project.icon}</span>
-              {project.title}
-            </h2>
-          </div>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
-          >
-            <X size={24} className="text-charcoal" />
-          </button>
-        </div>
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+        >
+          <X className="w-6 h-6 text-charcoal" />
+        </button>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Image Carousel */}
-          <div className="relative mb-8 rounded-2xl overflow-hidden bg-gray-100">
-            <div className="aspect-video relative">
-              <img
-                src={project.images[currentImageIndex]}
-                alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover transition-opacity duration-500"
-              />
-
-              {project.images.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
-                  >
-                    <ChevronLeft size={20} className="text-charcoal" />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
-                  >
-                    <ChevronRight size={20} className="text-charcoal" />
-                  </button>
-                </>
-              )}
+        <div className="p-8">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="text-6xl mb-4">{project.icon}</div>
+            <h2 className="font-poppins text-4xl font-bold text-charcoal mb-4">{project.title}</h2>
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {project.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-coral/20 text-coral px-4 py-2 rounded-full text-sm font-semibold"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
+          </div>
 
-            {/* Image Indicators */}
+          {/* Image Carousel */}
+          <div className="relative mb-8 rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src={project.images[currentImageIndex]}
+              alt={`${project.title} - Image ${currentImageIndex + 1}`}
+              className="w-full h-80 object-cover"
+            />
+
             {project.images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {project.images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentImageIndex
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-300"
+                >
+                  <ChevronLeft className="w-6 h-6 text-charcoal" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-300"
+                >
+                  <ChevronRight className="w-6 h-6 text-charcoal" />
+                </button>
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                  {project.images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentImageIndex
                         ? 'bg-coral scale-125'
                         : 'bg-white/70 hover:bg-white'
-                      }`}
-                  />
-                ))}
-              </div>
+                        }`}
+                    />
+                  ))}
+                </div>
+              </>
             )}
           </div>
 
@@ -112,12 +137,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-cream to-coral/10 rounded-2xl p-6 text-center">
-            <h3 className="font-poppins text-xl font-semibold text-charcoal mb-4">Interested in this project?</h3>
-            <button className="bg-gradient-to-r from-coral to-raspberry text-white px-12 py-4 rounded-2xl font-poppins font-semibold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-coral/90 hover:to-raspberry/90">
-              Get Project Details
+            <h3 className="font-poppins text-xl font-semibold text-charcoal mb-4">Ready to bring this project to life? 🚀</h3>
+            <p className="text-charcoal/70 mb-6 text-sm leading-relaxed">
+              Get this complete project with source code, documentation, and full support. Perfect for academic submissions and learning!
+            </p>
+            <button
+              onClick={handleGetProject}
+              className="bg-gradient-to-r from-coral to-raspberry text-white px-12 py-4 rounded-2xl font-poppins font-semibold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-coral/90 hover:to-raspberry/90 group relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                <span>🎯 Get This Project Now</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-raspberry to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             <p className="text-charcoal/60 mt-4 text-sm">
-              Contact us to learn more about this project and implementation details
+              💡 Instant delivery • 🔧 Full source code • 🎓 Academic ready
             </p>
           </div>
         </div>

@@ -24,7 +24,7 @@ const allProjects: Project[] = [
     description: "Comprehensive C program for calculating student grades with multiple subjects, GPA calculation, and statistical analysis including mean, median, and grade distribution.",
     icon: "🎓",
     tags: ["PPS", "C Programming", "Problem Solving"],
-    images: ["https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800", "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"]
+    images: ["https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800", "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800"]
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const allProjects: Project[] = [
     description: "Advanced C calculator implementing basic arithmetic, trigonometric functions, logarithms, and memory operations with error handling.",
     icon: "🔢",
     tags: ["PPS", "Mathematics", "C Programming"],
-    images: ["https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800", "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800"]
+    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800", "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"]
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const allProjects: Project[] = [
     description: "C program for converting numbers between different bases (binary, octal, decimal, hexadecimal) with validation and error checking.",
     icon: "🔄",
     tags: ["PPS", "Number Systems", "C Programming"],
-    images: ["https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"]
+    images: ["https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800", "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800"]
   },
   {
     id: 7,
@@ -72,7 +72,7 @@ const allProjects: Project[] = [
     description: "IoT-based temperature monitoring using C programming with sensor data collection, alerts, and data logging capabilities.",
     icon: "🌡️",
     tags: ["PPS", "IoT", "Sensors"],
-    images: ["https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800", "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"]
+    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
   },
   {
     id: 8,
@@ -80,7 +80,7 @@ const allProjects: Project[] = [
     description: "Collection of C programs for printing various patterns including pyramids, diamonds, and number patterns with customizable dimensions.",
     icon: "🔶",
     tags: ["PPS", "Patterns", "Logic"],
-    images: ["https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800", "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800"]
+    images: ["https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800", "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800"]
   },
   {
     id: 9,
@@ -104,7 +104,7 @@ const allProjects: Project[] = [
     description: "C programming project for basic banking operations including account creation, money transfer, balance inquiry, and transaction logs.",
     icon: "🏦",
     tags: ["PPS", "Banking", "Data Management"],
-    images: ["https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"]
+    images: ["https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800", "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"]
   },
   {
     id: 12,
@@ -112,7 +112,7 @@ const allProjects: Project[] = [
     description: "Random number generator for lottery systems with probability calculations, number validation, and historical analysis features.",
     icon: "🎰",
     tags: ["PPS", "Random Numbers", "Probability"],
-    images: ["https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=800", "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800"]
+    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800", "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"]
   },
   {
     id: 13,
@@ -136,7 +136,7 @@ const allProjects: Project[] = [
     description: "C program creating a digital clock with alarm functionality, time formatting options, and timezone support.",
     icon: "🕐",
     tags: ["PPS", "Time Management", "Display"],
-    images: ["https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=800", "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800"]
+    images: ["https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=800", "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800"]
   },
   {
     id: 16,
@@ -152,7 +152,7 @@ const allProjects: Project[] = [
     description: "Multi-purpose unit converter for length, weight, temperature, and currency with accurate conversion formulas.",
     icon: "⚖️",
     tags: ["PPS", "Conversion", "Utilities"],
-    images: ["https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800", "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"]
+    images: ["https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800", "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"]
   },
   {
     id: 18,
@@ -168,7 +168,7 @@ const allProjects: Project[] = [
     description: "Electronic voting system implementation in C with candidate management, vote counting, and result declaration.",
     icon: "🗳️",
     tags: ["PPS", "Voting", "Democracy"],
-    images: ["https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800", "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800"]
+    images: ["https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800", "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800"]
   },
   {
     id: 20,
@@ -176,7 +176,7 @@ const allProjects: Project[] = [
     description: "C implementation of maze solving algorithms including backtracking and shortest path finding with visualization.",
     icon: "🌀",
     tags: ["PPS", "Algorithms", "Pathfinding"],
-    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800", "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800"]
+    images: ["https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800", "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800"]
   },
   {
     id: 21,
@@ -208,7 +208,7 @@ const allProjects: Project[] = [
     description: "Efficient C program for generating prime numbers using Sieve of Eratosthenes with optimization techniques.",
     icon: "🔢",
     tags: ["PPS", "Mathematics", "Prime Numbers"],
-    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800", "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800"]
+    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800", "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"]
   },
   {
     id: 25,
@@ -234,7 +234,7 @@ const allProjects: Project[] = [
     description: "Object-oriented design for hospital management with patient records, appointment scheduling, billing, and doctor management.",
     icon: "🏥",
     tags: ["OODP", "Healthcare", "C++"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1559757174-f142bf611a73?w=800&q=80"]
   },
   {
     id: 28,
@@ -492,7 +492,7 @@ const allProjects: Project[] = [
     description: "Medical practice management with patient records, appointment scheduling, billing, and prescription management.",
     icon: "⚕️",
     tags: ["APP", "Healthcare", "Medical"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80"]
   },
   {
     id: 60,
@@ -864,7 +864,7 @@ const allProjects: Project[] = [
     description: "Medical database system with patient records, doctor schedules, appointment management, and billing.",
     icon: "🏥",
     tags: ["DBMS", "Healthcare", "Medical Records"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80"]
   },
   {
     id: 106,
@@ -1034,7 +1034,7 @@ const allProjects: Project[] = [
     description: "AI-powered learning assistant with machine learning algorithms for personalized study recommendations and progress tracking.",
     icon: "🤖",
     tags: ["AI/ML", "Python", "Machine Learning"],
-    images: ["https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800", "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800"]
+    images: ["https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800", "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800"]
   },
   {
     id: 127,
@@ -1106,7 +1106,7 @@ const allProjects: Project[] = [
     description: "AI system for medical diagnosis assistance using machine learning on patient symptoms and medical history.",
     icon: "⚕️",
     tags: ["AI/ML", "Healthcare", "Diagnosis"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"]
   },
   {
     id: 136,
@@ -1165,7 +1165,7 @@ const allProjects: Project[] = [
     images: ["https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800", "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800"]
   },
   {
-       id: 143,
+    id: 143,
     title: "Sales Forecasting AI",
     description: "Predictive analytics system for sales forecasting using time series analysis and machine learning.",
     icon: "💰",
@@ -1438,7 +1438,7 @@ const allProjects: Project[] = [
     description: "Advanced medical imaging analysis with filtering, enhancement, segmentation, and diagnostic features using MATLAB.",
     icon: "🏥",
     tags: ["Digital Image Processing", "MATLAB", "Medical"],
-    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"]
+    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", "https://images.unsplash.com/photo-1583947582982-38db4e10eae1?w=800&q=80"]
   },
   {
     id: 177,
@@ -1454,7 +1454,7 @@ const allProjects: Project[] = [
     description: "Advanced image segmentation techniques for medical imaging using region growing and edge detection methods.",
     icon: "🔬",
     tags: ["Digital Image Processing", "Medical", "Segmentation"],
-    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"]
+    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80"]
   },
   {
     id: 179,
@@ -1542,7 +1542,7 @@ const allProjects: Project[] = [
     description: "Medical image registration for aligning multiple images using feature-based and intensity-based methods.",
     icon: "🔗",
     tags: ["Digital Image Processing", "Image Registration", "Medical Imaging"],
-    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"]
+    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80"]
   },
   {
     id: 190,
@@ -1590,7 +1590,7 @@ const allProjects: Project[] = [
     description: "Multi-modal medical image fusion combining CT, MRI, and PET images for enhanced diagnosis.",
     icon: "🔬",
     tags: ["Digital Image Processing", "Image Fusion", "Multi-modal"],
-    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"]
+    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80"]
   },
   {
     id: 196,
@@ -1648,7 +1648,7 @@ const allProjects: Project[] = [
     description: "Automatic license plate detection and recognition system using computer vision and OCR techniques.",
     icon: "🚗",
     tags: ["Computer Vision", "OCR", "License Plate"],
-    images: ["https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800", "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800"]
+    images: ["https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800", "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"]
   },
   {
     id: 203,
@@ -1800,7 +1800,7 @@ const allProjects: Project[] = [
     description: "Computer vision system for medical image analysis and automated diagnosis assistance.",
     icon: "🏥",
     tags: ["Computer Vision", "Medical Imaging", "Healthcare"],
-    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"]
+    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80"]
   },
   {
     id: 222,
@@ -1898,7 +1898,7 @@ const allProjects: Project[] = [
     description: "Hospital management platform with patient records, appointment scheduling, and telemedicine features.",
     icon: "⚕️",
     tags: ["FSD", "Healthcare", "Telemedicine", "Management"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1559757174-f142bf611a73?w=800&q=80"]
   },
   {
     id: 234,
@@ -2246,7 +2246,7 @@ const allProjects: Project[] = [
     description: "RESTful e-commerce API using Spring Boot with JWT authentication, payment integration, and microservices architecture.",
     icon: "🛍️",
     tags: ["Java", "Spring Boot", "REST API", "Microservices"],
-    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800", "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"]
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800", "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800"]
   },
   {
     id: 277,
@@ -2262,7 +2262,7 @@ const allProjects: Project[] = [
     description: "Comprehensive hospital management system with patient records, appointment scheduling, and billing.",
     icon: "🏥",
     tags: ["Java", "Healthcare", "Management", "JSF"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80"]
   },
   {
     id: 279,
@@ -2430,7 +2430,7 @@ const allProjects: Project[] = [
     description: "Healthcare appointment management with calendar integration, reminders, and patient records.",
     icon: "📅",
     tags: ["Java", "Appointment", "Healthcare", "Scheduling"],
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800", "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=800"]
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=800&q=80"]
   },
   {
     id: 300,
@@ -2573,7 +2573,7 @@ const Projects = () => {
     };
 
     window.addEventListener('openProjectModal', handleProjectModalOpen as EventListener);
-    
+
     return () => {
       window.removeEventListener('openProjectModal', handleProjectModalOpen as EventListener);
     };
@@ -2815,7 +2815,7 @@ const Projects = () => {
             onClose={() => setSelectedProject(null)}
           />
         )}
-        
+
         {/* Replace existing bot with Enhanced AI Bot */}
         <EnhancedAIBot />
       </div>
@@ -2824,4 +2824,4 @@ const Projects = () => {
 };
 
 export default Projects;
-export {allProjects};
+export { allProjects };

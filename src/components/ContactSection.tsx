@@ -64,7 +64,7 @@ Submitted at: ${new Date().toLocaleString()}
       if (response.ok && result.success) {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', year: '', subject: '', message: '' });
-        
+
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
@@ -82,7 +82,7 @@ Submitted at: ${new Date().toLocaleString()}
   // Enhanced email handler for better Gmail integration
   const handleEmailClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     // Pre-filled email data
     const subject = encodeURIComponent('Inquiry from BrainyBox Website');
     const body = encodeURIComponent(`Hello BrainyBox Team,
@@ -90,16 +90,16 @@ Submitted at: ${new Date().toLocaleString()}
 I'm interested in learning more about your services.
 
 Best regards`);
-    
+
     // Try to open Gmail compose directly
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=brainybox459@gmail.com&su=${subject}&body=${body}`;
-    
+
     // Fallback to mailto
     const mailtoUrl = `mailto:brainybox459@gmail.com?subject=${subject}&body=${body}`;
-    
+
     // Try Gmail first, then fallback to default email client
     const popup = window.open(gmailUrl, '_blank', 'width=800,height=600');
-    
+
     // If popup is blocked or Gmail doesn't open, use mailto
     setTimeout(() => {
       if (!popup || popup.closed) {
@@ -110,23 +110,31 @@ Best regards`);
 
   // WhatsApp handler
   const handleWhatsAppClick = () => {
-    const phoneNumber = '918247439347'; // Your WhatsApp number (without + sign)
-    const message = encodeURIComponent(`Hello BrainyBox Team! 👋
+    const phoneNumber = '918247439347';
+    const message = encodeURIComponent(`Hello BrainyBox Team!
 
-I'm interested in your services and would like to discuss:
+I'm interested in your amazing academic programming projects and would like to discuss:
 
-• Project requirements
-• Pricing information
-• Available solutions
+What I'm looking for:
+• Academic programming projects
+• Complete source code solutions
+• Documentation and support
+• Pricing and delivery details
 
-Looking forward to hearing from you!
+Subjects I'm interested in:
+• Programming for Problem Solving (PPS)
+• Object-Oriented Design & Programming (OODP)
+• Data Structures & Algorithms (DSA)
+• Full Stack Development (FSD)
+• AI/ML Projects
+• Database Management Systems (DBMS)
+• And more...
 
-Best regards`);
-    
-    // WhatsApp Web URL
+Could you please help me find the perfect project for my academic needs?
+
+Looking forward to working with you!`);
+
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    
-    // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
   };
 
@@ -209,17 +217,15 @@ Best regards`);
                   <div
                     key={index}
                     onClick={info.onClick || (() => window.open(info.href, '_blank'))}
-                    className={`group flex items-start gap-3 p-4 bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl border transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${
-                      info.special 
-                        ? 'border-coral/50 hover:border-coral shadow-lg hover:shadow-coral/20' 
-                        : 'border-border/40 hover:border-coral/50'
-                    }`}
+                    className={`group flex items-start gap-3 p-4 bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl border transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${info.special
+                      ? 'border-coral/50 hover:border-coral shadow-lg hover:shadow-coral/20'
+                      : 'border-border/40 hover:border-coral/50'
+                      }`}
                   >
-                    <div className={`bg-gradient-to-br w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
-                      info.special
-                        ? 'from-coral/20 to-raspberry/20 shadow-md'
-                        : 'from-coral/10 to-raspberry/10'
-                    }`}>
+                    <div className={`bg-gradient-to-br w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${info.special
+                      ? 'from-coral/20 to-raspberry/20 shadow-md'
+                      : 'from-coral/10 to-raspberry/10'
+                      }`}>
                       <IconComponent className="w-5 h-5 text-coral" />
                     </div>
                     <div className="flex-1">
@@ -426,7 +432,7 @@ Best regards`);
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center mt-4">
-                    Your message will be sent directly to our team. 
+                    Your message will be sent directly to our team.
                     <br />
                     We typically respond within 24 hours.
                   </p>

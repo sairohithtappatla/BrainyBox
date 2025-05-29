@@ -505,6 +505,39 @@ const EnhancedAIBot: React.FC = () => {
     }, 500);
   };
 
+  // Add WhatsApp contact function for AI bot
+  const handleWhatsAppContact = (projectTitle?: string) => {
+    const phoneNumber = '918247439347';
+    let message = '';
+
+    if (projectTitle) {
+      message = encodeURIComponent(
+        `Hi BrainyBox Team!
+
+I was exploring projects through your AI assistant and I'm interested in: "${projectTitle}"
+
+Could you provide more details about:
+• Pricing and packages
+• What's included
+• Delivery timeline
+• Academic support
+
+Thanks!`
+      );
+    } else {
+      message = encodeURIComponent(
+        `Hello from BrainyBox AI Assistant!
+
+I'm interested in your academic programming projects. Could you help me find the perfect project for my needs?
+
+Looking forward to discussing!`
+      );
+    }
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
