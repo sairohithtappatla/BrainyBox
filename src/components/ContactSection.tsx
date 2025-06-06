@@ -33,7 +33,7 @@ const ContactSection = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR WEB3 FORM KEY',
+          access_key: '03b6581a-5dad-4c2e-a46a-72ca57901a38',
           name: formData.name,
           email: formData.email,
           year: formData.year,
@@ -168,7 +168,6 @@ Looking forward to working with you!`);
     'General Inquiry',
     'Project Consultation',
     'Technical Support',
-    'Partnership Opportunity',
     'Custom Development',
     'Pricing Information',
     'Other'
@@ -178,15 +177,15 @@ Looking forward to working with you!`);
     <section className="py-20 sm:py-24 px-6 bg-background relative overflow-hidden" id="contact">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-coral/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 left-20 w-48 h-48 bg-raspberry/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-lavender/10 rounded-full blur-xl animate-bounce-gentle" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-20 right-20 w-64 h-64 bg-coral/5 dark:bg-coral/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 left-20 w-48 h-48 bg-raspberry/5 dark:bg-raspberry/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-lavender/10 dark:bg-lavender/20 rounded-full blur-xl animate-bounce-gentle" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-3 bg-coral/20 dark:bg-coral/30 border border-coral/40 px-6 py-3 rounded-full mb-8 text-base font-semibold text-coral shadow-lg backdrop-blur-md">
+          <div className="inline-flex items-center gap-3 bg-coral/10 dark:bg-coral/20 border border-coral/30 dark:border-coral/40 px-6 py-3 rounded-full mb-8 text-base font-semibold text-coral shadow-lg backdrop-blur-md">
             <span className="text-lg">📧</span>
             <span>Get In Touch</span>
           </div>
@@ -217,14 +216,14 @@ Looking forward to working with you!`);
                   <div
                     key={index}
                     onClick={info.onClick || (() => window.open(info.href, '_blank'))}
-                    className={`group flex items-start gap-3 p-4 bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-xl border transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${info.special
-                      ? 'border-coral/50 hover:border-coral shadow-lg hover:shadow-coral/20'
+                    className={`group flex items-start gap-3 p-4 bg-card dark:bg-card/80 backdrop-blur-md rounded-xl border transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer ${info.special
+                      ? 'border-coral/50 hover:border-coral shadow-lg hover:shadow-coral/20 dark:hover:shadow-coral/30'
                       : 'border-border/40 hover:border-coral/50'
                       }`}
                   >
                     <div className={`bg-gradient-to-br w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${info.special
-                      ? 'from-coral/20 to-raspberry/20 shadow-md'
-                      : 'from-coral/10 to-raspberry/10'
+                      ? 'from-coral/20 to-raspberry/20 dark:from-coral/30 dark:to-raspberry/30 shadow-md'
+                      : 'from-coral/10 to-raspberry/10 dark:from-coral/20 dark:to-raspberry/20'
                       }`}>
                       <IconComponent className="w-5 h-5 text-coral" />
                     </div>
@@ -249,7 +248,7 @@ Looking forward to working with you!`);
             </div>
 
             {/* Additional Info */}
-            <div className="bg-gradient-to-r from-coral/10 to-raspberry/10 rounded-2xl p-6 border border-coral/20 mb-6">
+            <div className="bg-gradient-to-r from-coral/5 to-raspberry/5 dark:from-coral/10 dark:to-raspberry/10 rounded-2xl p-6 border border-coral/20 dark:border-coral/30 mb-6">
               <h4 className="font-bold text-foreground mb-3">Why Choose BrainyBox?</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
@@ -282,18 +281,18 @@ Looking forward to working with you!`);
             </div>
           </div>
 
-          {/* Contact Form - Always Visible */}
+          {/* Contact Form - Fixed Dark Mode Styling */}
           <div className="lg:col-span-2">
-            <div className="bg-background/80 dark:bg-background/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-border/40 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-raspberry/5 opacity-50" />
+            <div className="bg-card/80 dark:bg-card/60 backdrop-blur-xl rounded-3xl p-8 sm:p-10 border border-border/30 dark:border-border/20 relative overflow-hidden shadow-xl dark:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-coral/3 to-raspberry/3 dark:from-coral/5 dark:to-raspberry/5 opacity-50" />
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-8 text-foreground">Send us a Message</h3>
 
                 {/* Success Message */}
                 {isSubmitted && (
-                  <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <div className="mb-6 p-4 bg-green-50/90 dark:bg-green-950/50 border border-green-200/60 dark:border-green-800/40 rounded-xl flex items-center gap-3 backdrop-blur-sm">
+                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
                     <div>
                       <p className="text-green-800 dark:text-green-200 font-medium">
                         Message sent successfully!
@@ -307,7 +306,7 @@ Looking forward to working with you!`);
 
                 {/* Error Message */}
                 {submitError && (
-                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
+                  <div className="mb-6 p-4 bg-red-50/90 dark:bg-red-950/50 border border-red-200/60 dark:border-red-800/40 rounded-xl backdrop-blur-sm">
                     <p className="text-red-800 dark:text-red-200 font-medium">
                       {submitError}
                     </p>
@@ -328,7 +327,7 @@ Looking forward to working with you!`);
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 rounded-xl border border-border/40 bg-background/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-xl border border-border/50 dark:border-border/30 bg-background/70 dark:bg-background/40 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/60 dark:focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-foreground placeholder:text-muted-foreground/70"
                         placeholder="John Doe"
                       />
                     </div>
@@ -345,7 +344,7 @@ Looking forward to working with you!`);
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 rounded-xl border border-border/40 bg-background/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-xl border border-border/50 dark:border-border/30 bg-background/70 dark:bg-background/40 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/60 dark:focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-foreground placeholder:text-muted-foreground/70"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -362,16 +361,22 @@ Looking forward to working with you!`);
                         value={formData.year}
                         onChange={handleInputChange}
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 rounded-xl border border-border/40 bg-background/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-xl border border-border/50 dark:border-border/30 bg-background/70 dark:bg-background/40 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/60 dark:focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-foreground appearance-none cursor-pointer"
+                        style={{
+                          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                          backgroundPosition: 'right 0.75rem center',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: '1.5em 1.5em'
+                        }}
                       >
-                        <option value="">Select your year</option>
-                        <option value="1st Year">1st Year</option>
-                        <option value="2nd Year">2nd Year</option>
-                        <option value="3rd Year">3rd Year</option>
-                        <option value="4th Year">4th Year</option>
-                        <option value="Graduate">Graduate</option>
-                        <option value="Professional">Professional</option>
-                        <option value="Other">Other</option>
+                        <option value="" className="text-muted-foreground">Select your year</option>
+                        <option value="1st Year" className="text-foreground bg-background">1st Year</option>
+                        <option value="2nd Year" className="text-foreground bg-background">2nd Year</option>
+                        <option value="3rd Year" className="text-foreground bg-background">3rd Year</option>
+                        <option value="4th Year" className="text-foreground bg-background">4th Year</option>
+                        <option value="Graduate" className="text-foreground bg-background">Graduate</option>
+                        <option value="Professional" className="text-foreground bg-background">Professional</option>
+                        <option value="Other" className="text-foreground bg-background">Other</option>
                       </select>
                     </div>
 
@@ -386,11 +391,19 @@ Looking forward to working with you!`);
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 rounded-xl border border-border/40 bg-background/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-xl border border-border/50 dark:border-border/30 bg-background/70 dark:bg-background/40 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/60 dark:focus:border-coral/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-foreground appearance-none cursor-pointer"
+                        style={{
+                          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                          backgroundPosition: 'right 0.75rem center',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: '1.5em 1.5em'
+                        }}
                       >
-                        <option value="">Select a subject</option>
+                        <option value="" className="text-muted-foreground">Select a subject</option>
                         {subjects.map((subject, index) => (
-                          <option key={index} value={subject}>{subject}</option>
+                          <option key={index} value={subject} className="text-foreground bg-background">
+                            {subject}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -408,7 +421,7 @@ Looking forward to working with you!`);
                       required
                       disabled={isSubmitting}
                       rows={6}
-                      className="w-full px-4 py-3 rounded-xl border border-border/40 bg-background/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/50 transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 rounded-xl border border-border/50 dark:border-border/30 bg-background/70 dark:bg-background/40 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-coral/50 focus:border-coral/60 dark:focus:border-coral/50 transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed text-foreground placeholder:text-muted-foreground/70"
                       placeholder="Tell us about your project or inquiry..."
                     />
                   </div>
@@ -416,7 +429,7 @@ Looking forward to working with you!`);
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-8 py-4 text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_20px_60px_rgba(226,109,90,0.4)] rounded-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:scale-100"
+                    className="w-full bg-gradient-to-r from-coral to-raspberry hover:from-coral/90 hover:to-raspberry/90 text-white px-8 py-4 text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_20px_60px_rgba(226,109,90,0.4)] dark:hover:shadow-[0_20px_60px_rgba(226,109,90,0.6)] rounded-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center gap-2">

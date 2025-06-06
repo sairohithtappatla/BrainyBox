@@ -152,7 +152,7 @@ Looking forward to your student-friendly pricing!`
               <div className="absolute inset-0 bg-gradient-to-r from-raspberry to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             <p className="text-charcoal/60 mt-4 text-sm">
-              💵 Student discounts available • 🚀 Instant download • 📚 Academic ready • 💬 24/7 support
+              💵 Student discounts available • 📚 Academic ready • 💬 1 :1 support
             </p>
           </div>
         </div>
