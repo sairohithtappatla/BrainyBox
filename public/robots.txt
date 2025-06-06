@@ -1,14 +1,23 @@
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+Crawl-delay: 1
 
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+# Sitemaps
+Sitemap: https://brainybox.netlify.app/sitemap.xml
+
+# Important pages for indexing
+Allow: /projects
+Allow: /projects?category=*
+
+# Disallow admin/sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.well-known/
