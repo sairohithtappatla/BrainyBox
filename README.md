@@ -5,7 +5,6 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=E26D5A&background=FFFFFF00&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+BrainyBox!;Premium+Code+Marketplace;Build+Something+Amazing!" alt="Typing SVG" />
 
-
 [![GitHub stars](https://img.shields.io/github/stars/sairohithtapaptla/BrainyBox?style=for-the-badge&logo=github&color=E26D5A)](https://github.com/sairohithtapaptla/BrainyBox/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/sairohithtapaptla/BrainyBox?style=for-the-badge&logo=github&color=C4405B)](https://github.com/sairohithtapaptla/BrainyBox/network)
 [![GitHub issues](https://img.shields.io/github/issues/sairohithtapaptla/BrainyBox?style=for-the-badge&logo=github&color=8B5CF6)](https://github.com/sairohithtapaptla/BrainyBox/issues)
@@ -299,7 +298,7 @@ We love contributions! Here's how you can help make BrainyBox even better:
 
 ---
 
-## 🎯Future Roadmap
+## 🎯 Roadmap
 
 - [ ] 🔐 User authentication system
 - [ ] 💰 Payment integration for marketplace
