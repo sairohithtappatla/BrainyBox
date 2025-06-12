@@ -1,3 +1,6 @@
+# BrainyBox - Programming Projects Marketplace
+# Robots.txt for SEO Optimization
+
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -10,14 +13,27 @@ User-agent: *
 Allow: /
 Crawl-delay: 2
 
-# Sitemaps
+# Important: Sitemap location
 Sitemap: https://brainybox.netlify.app/sitemap.xml
 
-# Important pages for indexing
-Allow: /projects
-Allow: /projects?category=*
+# Allow important sections
+Allow: /#projects
+Allow: /#features  
+Allow: /#pricing
+Allow: /#testimonials
+Allow: /#contact
 
-# Disallow admin/sensitive areas
-Disallow: /admin/
-Disallow: /api/
-Disallow: /.well-known/
+# Disallow unnecessary files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /package.json
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
+
+# Allow media files
+Allow: /assets/
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.webp
