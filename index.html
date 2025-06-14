@@ -101,6 +101,21 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: 'BrainyBox - Programming Projects Marketplace',
+      page_location: window.location.href,
+      content_group1: 'Education',
+      content_group2: 'Programming Projects'
+    });
+  </script>
 </head>
 
 <body>
